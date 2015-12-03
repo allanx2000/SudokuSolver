@@ -1,0 +1,5 @@
+c:\users\allan\documents\visual studio 2015\Projects\SudokuSolver\Solver.Engine\obj\Debug\Solver.Engine.csprojResolveAssemblyReference.cache
+c:\users\allan\documents\visual studio 2015\Projects\SudokuSolver\Solver.Engine\bin\Debug\Solver.Engine.dll
+c:\users\allan\documents\visual studio 2015\Projects\SudokuSolver\Solver.Engine\bin\Debug\Solver.Engine.pdb
+c:\users\allan\documents\visual studio 2015\Projects\SudokuSolver\Solver.Engine\obj\Debug\Solver.Engine.dll
+c:\users\allan\documents\visual studio 2015\Projects\SudokuSolver\Solver.Engine\obj\Debug\Solver.Engine.pdb

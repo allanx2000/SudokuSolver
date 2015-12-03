@@ -1,0 +1,11 @@
+c:\users\allan\documents\visual studio 2015\Projects\SudokuSolver\Solver.Tester\bin\Debug\Solver.Tester.exe.config
+c:\users\allan\documents\visual studio 2015\Projects\SudokuSolver\Solver.Tester\bin\Debug\Solver.Tester.exe
+c:\users\allan\documents\visual studio 2015\Projects\SudokuSolver\Solver.Tester\bin\Debug\Solver.Tester.pdb
+c:\users\allan\documents\visual studio 2015\Projects\SudokuSolver\Solver.Tester\bin\Debug\Solver.Engine.dll
+c:\users\allan\documents\visual studio 2015\Projects\SudokuSolver\Solver.Tester\bin\Debug\Solver.Engine.pdb
+c:\users\allan\documents\visual studio 2015\Projects\SudokuSolver\Solver.Tester\obj\Debug\Solver.Tester.csprojResolveAssemblyReference.cache
+c:\users\allan\documents\visual studio 2015\Projects\SudokuSolver\Solver.Tester\obj\Debug\Solver.Tester.exe
+c:\users\allan\documents\visual studio 2015\Projects\SudokuSolver\Solver.Tester\obj\Debug\Solver.Tester.pdb
+c:\users\allan\documents\visual studio 2015\Projects\SudokuSolver\Solver.Tester\bin\Debug\Easy.txt
+c:\users\allan\documents\visual studio 2015\Projects\SudokuSolver\Solver.Tester\bin\Debug\Expert.txt
+C:\Users\Allan\Documents\Visual Studio 2015\Projects\SudokuSolver\Solver.Tester\bin\Debug\Expert - Copy.txt
