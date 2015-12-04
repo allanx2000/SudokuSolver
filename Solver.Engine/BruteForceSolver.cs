@@ -180,7 +180,7 @@ namespace Solver.Engine
                 {
                     if (snapshots.Count == 1)
                     {
-                        throw new Exception("Something wrong");
+                        throw new Exception("The Board is unsolvable.");
                     }
 
                     snapshots.Pop();

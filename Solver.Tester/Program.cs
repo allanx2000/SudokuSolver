@@ -50,12 +50,12 @@ namespace Solver.Tester
 
             List<BruteForceSolver.Snapshot> steps = solver.GetSteps();
             
-            PrintBoard(board);
+            PrintSolution(solver, board);
 
             Console.ReadLine();
         }
 
-        private static void PrintBoard(Board board)
+        private static void PrintSolution(BruteForceSolver solver, Board board)
         {
             for (int r = 0; r < 9; r++)
             {
@@ -71,12 +71,23 @@ namespace Solver.Tester
                     }
                 }
 
-                Console.WriteLine();
-
                 if (r / 3 != (r + 1) / 3)
                 {
                     Console.WriteLine();
                 }
+
+                Console.WriteLine();
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("Number of iterations: " + solver.Iterations);
+            Console.WriteLine("Steps");
+
+
+            foreach (var s in solver.GetSteps())
+            {
+                string tmp = String.Format("Row (1-based): {0}, Column: {1}, Value: {2}", s.RowChanged + 1, s.ColumnChanged + 1, s.PossibleNumbers[s.IndexToTry]);
+                Console.WriteLine(tmp);
             }
         }
     }   
