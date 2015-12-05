@@ -52,7 +52,11 @@ namespace Solver.GUI
 
         private TextBox MakeTextBox(int r, int c)
         {
+
             TextBox tx = new TextBox();
+
+            //Setting these overrides the ResourceDictionary values so did not use the GenericDictionary in this App.
+
             tx.MaxLength = 1;
             tx.HorizontalContentAlignment = HorizontalAlignment.Center;
             tx.Width = tx.Height = 30;
