@@ -9,3 +9,4 @@ c:\users\allan\documents\visual studio 2015\Projects\SudokuSolver\Solver.Tester\
 c:\users\allan\documents\visual studio 2015\Projects\SudokuSolver\Solver.Tester\bin\Debug\Easy.txt
 c:\users\allan\documents\visual studio 2015\Projects\SudokuSolver\Solver.Tester\bin\Debug\Expert.txt
 C:\Users\Allan\Documents\Visual Studio 2015\Projects\SudokuSolver\Solver.Tester\bin\Debug\Expert - Copy.txt
+C:\Users\Allan\Documents\Visual Studio 2015\Projects\SudokuSolver\Solver.Tester\bin\Debug\Expert - Copy (2).txt
