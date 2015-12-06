@@ -22,6 +22,8 @@ namespace Solver.Engine
             LeastMoves
         }
 
+        private readonly int maxIterations;
+
         /// <summary>
         /// Holds the Snapshot state for restoring. This also contains the moves used to solve the Board
         /// </summary>
@@ -53,7 +55,7 @@ namespace Solver.Engine
                 IndexToTry = indexToTry;
                 PossibleNumbers = possibleValues.AsReadOnly();
             }
-
+            
             public void IncrementIndexToTry()
             {
                 IndexToTry++;
@@ -82,10 +84,12 @@ namespace Solver.Engine
         private Board originalBoard;
         private Mode solverMode;
 
-        public BruteForceSolver(Board board, Mode mode = Mode.LeastMoves)
+        public BruteForceSolver(Board board, Mode mode = Mode.LeastMoves, int maxIterations = 1000)
         {
             originalBoard = board;
+
             this.solverMode = mode;
+            this.maxIterations = maxIterations;
 
             if (mode == Mode.Random)
                 rand = new Random();
@@ -93,22 +97,30 @@ namespace Solver.Engine
 
             //Initialize Snapshots
 
+            Board bd = board.Clone();
+            BoardCleaner.CleanBoard(bd);
+
             var cell = board.GetAllChangeableCells().First();
-            var snapshot = new Snapshot(board.Clone(), cell.Row, cell.Column, cell.GetPossibleNumbers(), 0);
+            var snapshot = new Snapshot(bd, cell.Row, cell.Column, cell.GetPossibleNumbers(), 0);
+            
             snapshots.Push(snapshot);
 
         }
 
-        public int Iterations = 0;
+        public int Iterations { get; private set; }
 
         public Board Solve()
         {
+            Iterations = 0;
             Snapshot snapshot;
             Board board;
 
             while (true)
             {
                 Iterations++;
+
+                if (Iterations >= maxIterations)
+                    throw new Exception("Board is most likely unsolvable, exceeded iteration limit: " + maxIterations);
 
                 snapshot = snapshots.Peek();
 

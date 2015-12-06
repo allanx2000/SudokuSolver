@@ -47,3 +47,4 @@ Temporary Items
 .apdisk
 *.dll
 Solver.Engine/bin/Debug/Solver.Engine.dll
+*.dll

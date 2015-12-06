@@ -45,7 +45,7 @@ namespace Solver.Tester
                 }
             }
 
-            BruteForceSolver solver = new BruteForceSolver(board, BruteForceSolver.Mode.Random);
+            BruteForceSolver solver = new BruteForceSolver(board, BruteForceSolver.Mode.LeastMoves);
             board = solver.Solve();
 
             List<BruteForceSolver.Snapshot> steps = solver.GetSteps();

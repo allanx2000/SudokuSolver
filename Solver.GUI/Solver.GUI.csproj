@@ -69,6 +69,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MainWindowViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -96,6 +97,18 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Visual Studio 2013\Projects\Innouvous.Utils\Innouvous.Utils.Dialogs\Innouvous.Utils.Dialogs.csproj">
+      <Project>{2b0e7f06-edf2-4c54-a3be-bd303186f9cb}</Project>
+      <Name>Innouvous.Utils.Dialogs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Visual Studio 2013\Projects\Innouvous.Utils\Innouvous.Utils.MessageBoxFactory\Innouvous.Utils.MessageBoxFactory.csproj">
+      <Project>{6bddd1f2-3bc0-431d-923d-ce76681a3851}</Project>
+      <Name>Innouvous.Utils.MessageBoxFactory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Visual Studio 2013\Projects\Innouvous.Utils\Innouvous.Utils.MVVM\Innouvous.Utils.MVVM.csproj">
+      <Project>{b90d1bd6-db68-416c-9150-ba4e3c73a3f2}</Project>
+      <Name>Innouvous.Utils.MVVM</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Solver.Engine\Solver.Engine.csproj">
       <Project>{53cb328e-d1ea-42ff-bf2a-66f7ede15dd6}</Project>
       <Name>Solver.Engine</Name>

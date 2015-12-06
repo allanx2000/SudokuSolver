@@ -22,7 +22,7 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <Grid HorizontalAlignment="Center" Grid.Row="0" Name="InputGrid">
+        <Grid HorizontalAlignment="Center" Grid.Row="0" IsEnabled="{Binding GridEnabled}" Name="InputGrid">
         </Grid>
 
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
@@ -32,8 +32,8 @@
                 </Style>
             </StackPanel.Resources>
             <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-                <Button IsEnabled="{Binding SolveEnabled}" Command="{SolveCommand}">Solve</Button>
-                <Button Name="RevertBoardButton" Click="RevertBoardButton_Click">Revert</Button>
+                <Button IsEnabled="{Binding SolveEnabled}" Command="{Binding SolveCommand}">Solve</Button>
+                <Button IsEnabled="{Binding RevertEnabled}" Command="{Binding RevertCommand}">Revert</Button>
             </StackPanel>
             
             <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
@@ -42,7 +42,7 @@
             </StackPanel>
 
             <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-                <Button Name="ResetBoardButton" Click="ResetBoardButton_Click">Clear</Button>
+                <Button Command="{Binding ResetCommand}">Reset</Button>
             </StackPanel>
         </StackPanel>
         <GroupBox Header="Statistics" Grid.Row="2">
