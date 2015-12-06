@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Solver.GUI"
         mc:Ignorable="d" SizeToContent="Height"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Sudoku Solver" Height="350" Width="525">
 
     <Window.Resources>
         <Style TargetType="Button">
@@ -14,21 +14,39 @@
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
     </Window.Resources>
-    
-    <Grid HorizontalAlignment="Center">
+
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <Grid Grid.Row="0" Name="InputGrid">
+        <Grid HorizontalAlignment="Center" Grid.Row="0" Name="InputGrid">
         </Grid>
 
-        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Grid.Row="1">
-            <Button Name="SolveButton" Click="SolveButton_Click">Solve</Button>
-            <Button Name="ResetBoardButton" Click="ResetBoardButton_Click">Reset Board</Button>
-            <Button Name="SaveBoardButton">Save Board</Button>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+            <StackPanel.Resources>
+                <Style TargetType="StackPanel">
+                    <Setter Property="Margin" Value="0 0 20 0"/>
+                </Style>
+            </StackPanel.Resources>
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                <Button IsEnabled="{Binding SolveEnabled}" Command="{SolveCommand}">Solve</Button>
+                <Button Name="RevertBoardButton" Click="RevertBoardButton_Click">Revert</Button>
+            </StackPanel>
+            
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                <Button Name="SaveBoardButton">Save</Button>
+                <Button Name="LoadBoardButton">Load</Button>
+            </StackPanel>
+
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                <Button Name="ResetBoardButton" Click="ResetBoardButton_Click">Clear</Button>
+            </StackPanel>
         </StackPanel>
+        <GroupBox Header="Statistics" Grid.Row="2">
+
+        </GroupBox>
     </Grid>
 </Window>
