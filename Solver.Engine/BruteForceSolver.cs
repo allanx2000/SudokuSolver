@@ -19,7 +19,8 @@ namespace Solver.Engine
         public enum Mode
         {
             Random,
-            LeastMoves
+            LeastMoves,
+            MostMoves
         }
 
         private readonly int maxIterations;
@@ -46,7 +47,7 @@ namespace Solver.Engine
             /// The state before the index is tried
             /// </summary>
             public Board Board { get; private set; }
-            
+
             public Snapshot(Board board, int rowChanged, int columnChanged, List<Numbers> possibleValues, int indexToTry)
             {
                 Board = board;
@@ -55,7 +56,7 @@ namespace Solver.Engine
                 IndexToTry = indexToTry;
                 PossibleNumbers = possibleValues.AsReadOnly();
             }
-            
+
             public void IncrementIndexToTry()
             {
                 IndexToTry++;
@@ -102,7 +103,7 @@ namespace Solver.Engine
 
             var cell = board.GetAllChangeableCells().First();
             var snapshot = new Snapshot(bd, cell.Row, cell.Column, cell.GetPossibleNumbers(), 0);
-            
+
             snapshots.Push(snapshot);
 
         }
@@ -155,34 +156,27 @@ namespace Solver.Engine
                     }
 
                     ChangeableCell cellToChange = null;
+                    IEnumerable<ChangeableCell> cells = board.GetAllChangeableCells();
+
 
                     switch (this.solverMode)
                     {
                         case Mode.LeastMoves:
-                            //Ordered
-                            IEnumerable<ChangeableCell> cells = null;
 
-                            for (int i = 1; i < 9; i++)
-                            {
-                                cells = board.GetAllChangeableCells().Where(x => x.GetPossibleNumbers().Count == i);
-
-                                //cells = board.GetAllChangeableCells().Where(x => x.GetPossibleNumbers().Count == 10 - i);
-
-                                if (cells.Count() > 0)
-                                {
-                                    cellToChange = cells.First();
-                                    break;
-                                }
-                            }
+                            cellToChange = cells.OrderBy(x => x.GetPossibleNumbers().Count).First();
+                            
+                            //if (cellToChange == null) not possible
+                            break;
+                        case Mode.MostMoves: //Worst
+                            cellToChange = cells.OrderByDescending(x => x.GetPossibleNumbers().Count).First();
 
                             //if (cellToChange == null) not possible
-                            
                             break;
                         case Mode.Random:
                             cellToChange = board.GetAllChangeableCells().ElementAt(rand.Next(board.ChangeableCellsLeft));
                             break;
                     }
-                     
+
                     var pv = cellToChange.GetPossibleNumbers();
 
                     Snapshot sn = new Snapshot(board.Clone(), cellToChange.Row, cellToChange.Column, pv, 0);
