@@ -46,5 +46,7 @@ Network Trash Folder
 Temporary Items
 .apdisk
 *.dll
-Solver.Engine/bin/Debug/Solver.Engine.dll
+*/bin/*
+*/obj/*
+
 *.dll
